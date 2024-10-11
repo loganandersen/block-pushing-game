@@ -6,6 +6,6 @@ To open project in godot do the following
     cd block-pushing-game
     godot project.godot
     
-You can also open up godot and then import it in the GUI.
+You can also open up godot and then import it with the GUI.
 
 See doc/backlog.md for the projects backlog.
