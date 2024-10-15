@@ -43,6 +43,18 @@ Anybody can add to the backlog if they have ideas.
   - Button should be able to 
 - Flag 
   - A flag that the player has to get to to beat the level. 
+- 
+
+### Level select
+
+The level select is designed by Aidan, Here are some ideas for how it
+should work.
+
+#### Options for level select
+- Level block, The level selection could be just like the regular
+  game, but there would be a block that the player can walk into to
+  select the level.
+- 
 
 # Documentation
 ## Readme
@@ -77,3 +89,9 @@ A document describing all of the current game requirements we have
 should be made.
 
 - Requirements spreadsheet.
+
+# Ideas
+This is a list of ideas for the game. These should be added after we
+get the critical features done with. 
+
+

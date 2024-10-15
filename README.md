@@ -8,4 +8,4 @@ To open project in godot do the following
     
 You can also open up godot and then import it with the GUI.
 
-See doc/backlog.md for the projects backlog.
+See [backlog.md](doc/backlog.md) for the projects backlog.
