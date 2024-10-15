@@ -6,15 +6,29 @@ Anybody can add to the backlog if they have ideas.
 
 # First Sprint (Minimum we need to get done for this sprint)
 ## Aidan
-- Get pictures for blocks and add them to the assets folder
-  - 
+- ~~Get pictures for blocks and add them to the assets folder~~
+
 ## James
 - Get player to move
   - Player should move orthogonally in all directions
   - Player should stop at wall
 ## Logan 
-- Create Github repo 
-- ~~ Create Backlog ~~
+- ~~Create Github repo~~
+- ~~Create Backlog~~
+
+# Second Sprint
+## Aidan
+- Write readme for github
+- Make levels
+
+## James 
+- Get boxes to work
+- Player should stop at walls
+- 
+
+## Logan Andersen
+- Make levels
+- Auto movement for testing 
 
 # Critical features
 ## Game
@@ -22,8 +36,14 @@ Anybody can add to the backlog if they have ideas.
 - The player should be able to move orthogonally in all directions. 
 - Player should stop at walls
 - Player should be able to push boxes around
+- Player should 
 
 ### Mechanics 
+- Buttons, 
+  - Button should be able to 
+- Flag 
+  - A flag that the player has to get to to beat the level. 
+
 # Documentation
 ## Readme
 A readme for this repo should be created, and it should have...
@@ -31,6 +51,7 @@ A readme for this repo should be created, and it should have...
 - Our names
 - A short description of the game
 - Instructions on how to compile the game. 
+- Statement of the licenses of the program. 
 
 ## Licensing 
 - MIT license for our own code
@@ -47,10 +68,12 @@ A readme for this repo should be created, and it should have...
 - Video game credits where we credit the godot engine, and the authors
   of any assets/code we've used.
 
+## Guidelines
+We should have a set of guidelines for developing the game. 
+[guidelines](guidelines.md)
 
 ## Requirements document
 A document describing all of the current game requirements we have
 should be made.
 
-This might be the requirements spreadsheet, since the power point said
-we need a requirements spreadsheet for the final.
+- Requirements spreadsheet.
