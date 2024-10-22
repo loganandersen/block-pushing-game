@@ -21,7 +21,8 @@ Anybody can add to the backlog if they have ideas.
 - Create requirements spreadsheet
 - Make level tester
 - Make some basic levels
-- Read the WIP readme and then critique it (I'll probably talk to Aidan) 
+- Read the WIP readme and then critique it (probably meet with Aidan)
+- Save the old sprint TODOS and put them in a different file [old sprints](old_sprints.md). 
 
 ## James
 - Make it so you can win levels
