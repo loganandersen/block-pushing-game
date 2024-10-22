@@ -27,7 +27,7 @@ Anybody can add to the backlog if they have ideas.
 ## James
 - Make it so you can win levels
 - Make it so player goes to another level after you win it
-- Write the rules for the level design
+- Write document that tells people how to create levels. 
 
 # First Sprint (Minimum we need to get done for this sprint)
 ## Aidan
