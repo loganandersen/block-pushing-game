@@ -4,43 +4,68 @@ should be done.
 
 Anybody can add to the backlog if they have ideas. 
 
-# First Sprint (Minimum we need to get done for this sprint)
-## Aidan
-- ~~Get pictures for blocks and add them to the assets folder~~
+# Quick Links  
+- [guidelines](guidelines.md)
+- [readme](../readme.md)
+
+# Third Sprint (Due 10/29/2024)
+## Aidan 
+- Finish readme
+- Read over the code and describe its archetecture. 
+
+## Logan
+- Test the game
+  - Orthogonal movement
+  - Stop at wall
+  - You can push block
+- Create requirements spreadsheet
+- Make level tester
+- Make some basic levels
+- Read the WIP readme and then critique it (tell Aidan if it needs changed)
+- Save the old sprint TODOS and put them in a different file [old sprints](old_sprints.md). 
 
 ## James
+- Make it so you can win levels
+- Make it so player goes to another level after you win it
+- Write document that tells people how to create levels. 
+
+# First Sprint (Minimum we need to get done for this sprint)
+## Aidan
+- ~~Get pictures for blocks and add them to the assets folder~~ 10/14/2024
+
+## James
+(James says this is done 10/22/2024)  I will test this and cross these off. 
 - Get player to move
   - Player should move orthogonally in all directions
-  - Player should stop at wall
+  - Player should stop at wall 
 ## Logan 
-- ~~Create Github repo~~
-- ~~Create Backlog~~
+- ~~Create Github repo~~ 10/11/2024
+- ~~Create Backlog~~ 10/11/2024
 
 # Second Sprint
 ## Aidan
-- Write readme for github
-- Make levels
+- Write readme for github (He worked on it 10/14/2024, but It isn't done) 
+- ~~Make levels~~ 10/14/2024
 
 ## James 
-- Get boxes to work
-- Player should stop at walls
-- 
+- ~~Get boxes to work~~ 10/22/2024
+- ~~Player should stop at walls~~ 10/22/2024
 
-## Logan Andersen
-- Make levels
-- Auto movement for testing 
+## Logan 
+- Make levels (Didn't do because of no code)
+- Auto movement for testing (Didn't do because of no code)
+
 
 # Critical features
 ## Game
 ### Movement 
-- The player should be able to move orthogonally in all directions. 
-- Player should stop at walls
-- Player should be able to push boxes around
-- Player should 
+- ~~The player should be able to move orthogonally in all directions.~~ 10/22/2024
+- ~~Player should stop at walls~~ 10/22/2024
+- ~~Player should be able to push boxes around~~ 10/22/2024
 
 ### Mechanics 
 - Buttons, 
-  - Button should be able to 
+  - Button should be able to open door when box is pushed on it.
 - Flag 
   - A flag that the player has to get to to beat the level. 
 - 
@@ -59,15 +84,17 @@ should work.
 # Documentation
 ## Readme
 A readme for this repo should be created, and it should have...
-- Name of game 
+- Name of game
 - Our names
 - A short description of the game
 - Instructions on how to compile the game. 
-- Statement of the licenses of the program. 
+- Statement of the licenses of the program.
+- Link to backlog
+- Written in Markdown (https://www.markdownguide.org/basic-syntax/)
 
 ## Licensing 
 - MIT license for our own code
-- No software license for any code we want to take from third be more
+- No software license for any code we want to take from third party should be more
   restrictive than MIT.
 - Game assets should be free culture as defined by the creative
   commons. 
