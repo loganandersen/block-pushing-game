@@ -15,14 +15,14 @@ Anybody can add to the backlog if they have ideas.
 - ~~make door asset~~ 10/24/2024 
 
 ## Logan
-- Test the game
-  - Orthogonal movement
-  - Stop at wall
-  - You can push block
+- ~~Test the game~~ 10/28/2024
+  - ~~Orthogonal movement~~ 10/28/2024
+  - ~~Stop at wall~~ 10/28/2024
+  - ~~You can push block~~ 10/28/2024
 - Create requirements spreadsheet
 - Make level tester
 - Make some basic levels
-- Read the WIP readme and then critique it (tell Aidan if it needs changed)
+- ~~Read the WIP readme and then critique it (tell Aidan if it needs changed)~~ 
 - Save the old sprint TODOS and put them in a different file [old
   sprints](old_sprints.md). 
 - Make a timeline for the project. 
@@ -39,8 +39,8 @@ Anybody can add to the backlog if they have ideas.
 ## James
 (James says this is done 10/22/2024)  I will test this and cross these off. 
 - Get player to move
-  - Player should move orthogonally in all directions
-  - Player should stop at wall 
+  - ~~Player should move orthogonally in all directions~~
+  - ~~Player should stop at wall~~
 ## Logan 
 - ~~Create Github repo~~ 10/11/2024
 - ~~Create Backlog~~ 10/11/2024
