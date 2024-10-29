@@ -4,8 +4,8 @@ In here you can find the Assets and Code used in the game
 
 Here's the way we reccomend for downloading the game
 
-    ``open any command prompt on your computer``
-    ``copy this line of code into the open terminal " git clone https://github.com/loganandersen/block-pushing-game.git " make sure to delete spaces
+    open any command prompt on your computer
+    copy this line of code into the open terminal " git clone https://github.com/loganandersen/block-pushing-game.git " make sure to delete spaces
     copy this line of code into the open terminal " cd block-pushing-game " again make sure to delete spaces
     copy this last line of code into the open terminal " godot project.godot "
     open the godot executable file and run ' project '
