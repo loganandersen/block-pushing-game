@@ -1,8 +1,8 @@
 ### Welcome to the block pushing game read me
 
-In here you can find the Assets and Code used in the game
+In here you can find the Assets and Code used in the game.
 
-Here's the way we reccomend for downloading the game
+Here's the way we reccomend for downloading the game.
 
     open any command prompt on your computer
     copy this line of code into the open terminal " git clone https://github.com/loganandersen/block-pushing-game.git " make sure to delete spaces
@@ -10,17 +10,17 @@ Here's the way we reccomend for downloading the game
     copy this last line of code into the open terminal " godot project.godot "
     open the godot executable file and run ' project '
 
-You can find all the assets for the game in the asset folder, if you wish to change them, feel free. Just make sure to match the file type that we ues (.png)
+You can find all the assets for the game in the asset folder, if you wish to change them, feel free. Just make sure to match the file type that we ues (.png).
 
 #### Code
 
 The file 'game_grod.gd' is where the logic happens, a quick overview for it is as follows:
 Player moves,
 first, can the player move here?
-if yes, move there, if no, don't
+If yes, move there, if no, don't.
 Next, forground and background
-Any asset the player can stand on goes into the background
-Any asset the player can NOT stand on goes in the forground
+Any asset the player can stand on goes into the background,
+any asset the player can NOT stand on goes in the foreground.
 
 
 
