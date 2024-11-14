@@ -19,8 +19,8 @@ Player moves,
 first, can the player move here?
 if yes, move there, if no, don't
 Next, forground and background
-Any asset the player can stand on goes into the forground
-Any asset the player can NOT stand on goes in the background
+Any asset the player can stand on goes into the background
+Any asset the player can NOT stand on goes in the forground
 
 
 
