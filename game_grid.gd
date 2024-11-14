@@ -7,7 +7,7 @@ const BOX_TILE = Vector2i(0,1)
 var playerLocation = Vector2i(1,1)
 
 func find_player_location() :
-	return get_used_cells_by_id(-1,PLAYER_TILE)[0]
+	return get_used_cells_by_id(0,PLAYER_TILE)[0]
 
 	
 # Called when the node enters the scene tree for the first time.
