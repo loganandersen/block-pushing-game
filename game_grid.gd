@@ -116,7 +116,7 @@ func check_level_win() :
 #Check if there is a tile over every button
 func all_buttons_pushed() : 
 	# Check if any block above the button is empty
-	for currentPosition in buttonLocations :
+	for position in buttonLocations :
 		if get_cell_atlas_coords(position) == EMPTY:
 			return false
 	return true

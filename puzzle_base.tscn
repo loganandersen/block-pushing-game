@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game_grid.gd" id="1_ir0nm"]
 [ext_resource type="Texture2D" uid="uid://cfeix67cm67ys" path="res://texture_atlas.png" id="1_qygbb"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4rn3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1whp"]
 texture = ExtResource("1_qygbb")
 texture_region_size = Vector2i(625, 625)
 0:0/0 = 0
@@ -17,7 +17,7 @@ texture_region_size = Vector2i(625, 625)
 
 [sub_resource type="TileSet" id="TileSet_psmma"]
 tile_size = Vector2i(625, 625)
-sources/0 = SubResource("TileSetAtlasSource_f4rn3")
+sources/0 = SubResource("TileSetAtlasSource_v1whp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qque"]
 texture = ExtResource("1_qygbb")
