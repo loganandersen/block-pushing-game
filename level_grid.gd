@@ -59,6 +59,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			var move_success = attempt_move(playerLocation, playerLocation + Vector2i(1,0))
 			if(move_success):
 				playerLocation = playerLocation + Vector2i(1,0)
+				
+		if event.is_action_pressed("enter_level"):
+			enter_level()
 		
 		# Update tiles that have been affected by certain game conditions
 		
@@ -67,8 +70,8 @@ func _unhandled_input(event: InputEvent) -> void:
 #Returns true if the move was successful, false if it was prevented
 func attempt_move(from_coords, to_coords):
 	
-	#Stop on walls
-	if(get_cell_atlas_coords(to_coords) != LEVEL1 || LEVEL2 || LEVEL3 || LEVEL4 || LEVEL5 || LEVEL6 || LEVEL7):
+		
+	if backgroundGrid.get_cell_atlas_coords(to_coords) == EMPTY:
 		return false
 	
 	#Actually move
@@ -80,3 +83,33 @@ func attempt_move(from_coords, to_coords):
 	
 	#Indicate the move was successful
 	return true
+
+func enter_level() :
+	
+	var tile_under = backgroundGrid.get_cell_atlas_coords(playerLocation)
+	
+	if tile_under == LEVEL1:
+		get_tree().change_scene_to_file("res://levels/level_1.tscn")
+		
+	if tile_under == LEVEL2:
+		get_tree().change_scene_to_file("res://levels/puzzle_1_fin.tscn")
+		
+	if tile_under == LEVEL3:
+		get_tree().change_scene_to_file("res://levels/puzzle_2_fin.tscn")
+		
+	if tile_under == LEVEL4:
+		get_tree().change_scene_to_file("res://levels/puzzle_3_fin.tscn")
+		
+	if tile_under == LEVEL5:
+		get_tree().change_scene_to_file("res://levels/puzzle_4_fin.tscn")
+		
+	if tile_under == LEVEL6:
+		get_tree().change_scene_to_file("res://levels/puzzle_5_fin.tscn")
+		
+	if tile_under == LEVEL7:
+		get_tree().change_scene_to_file("res://levels/puzzle_6_fin.tscn")
+	
+	
+	
+	pass
+	
