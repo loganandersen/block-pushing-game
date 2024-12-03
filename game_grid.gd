@@ -35,7 +35,9 @@ func find_goal():
 func all_buttons_pushed() : 
 	# Check if any block above the button is empty
 	for position in buttonLocations :
+		print(position)
 		if get_cell_atlas_coords(position) == EMPTY:
+			
 			return false
 	return true
 		
@@ -44,9 +46,9 @@ func all_buttons_pushed() :
 # pushed.
 func update_goal() : 
 	if all_buttons_pushed() : 
-		set_cell(goalLocation, 0, GOAL)
+		backgroundGrid.set_cell(goalLocation, 0, GOAL)
 	else :
-		set_cell(goalLocation, 0, GOAL_CLOSED)
+		backgroundGrid.set_cell(goalLocation, 0, GOAL_CLOSED)
 
 func find_player_location() :
 	return get_used_cells_by_id(0,PLAYER_TILE)[0]
@@ -55,7 +57,10 @@ func find_player_location() :
 func _ready() -> void:
 	playerLocation = find_player_location()
 	backgroundGrid = get_background_grid()
+	# initialize goal
 	goalLocation = find_goal()
+	# Initialize buttons
+	buttonLocations = backgroundGrid.get_used_cells_by_id(0,BUTTON)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -65,6 +70,7 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		
+		# Move the player
 		if event.is_action_pressed("move_down"):
 			var move_success = attempt_move(playerLocation, playerLocation + Vector2i(0,1))
 			if(move_success):
@@ -84,6 +90,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			var move_success = attempt_move(playerLocation, playerLocation + Vector2i(1,0))
 			if(move_success):
 				playerLocation = playerLocation + Vector2i(1,0)
+		
+		# Update tiles that have been affected by certain game conditions
+		update_goal()
+		
 
 #Attempt to move whatever is at from_coords to to_coords
 #Returns true if the move was successful, false if it was prevented
