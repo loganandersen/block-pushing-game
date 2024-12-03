@@ -15,25 +15,11 @@ const EMPTY = Vector2i(-1,-1)
 const LEVEL_PREFIX = "res://levels/puzzle_"
 const LEVEL_SUFFIX = "_fin.tscn"
 
-# The number of the last level in the game, that the player wins when completing
-const LAST_LEVEL_NUM = 6
-
-# Tracks the number of the level that should be loaded next
-static var nextLevelNumber = 0
-
 # Various variables used in the code, all are initialized by _ready()
 var playerLocation : Vector2i
 var buttonLocations : Array[Vector2i]
 var goalLocation : Vector2i 
 var backgroundGrid : TileMapLayer 
-
-# Return the full path for the next level in the loading sequence
-static func get_next_level_path() :
-	if(nextLevelNumber >= LAST_LEVEL_NUM) :
-		return #TODO: return the path for the victory screen here
-	else :
-		nextLevelNumber = nextLevelNumber + 1
-		return LEVEL_PREFIX + str(nextLevelNumber) + LEVEL_SUFFIX
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,7 +32,7 @@ func _ready() -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -79,9 +65,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 		# Update tiles that have been affected by certain game conditions
 		update_goal()
-		# Load the next level if the player just won this one
+		
+		# Go back to the hub level if the player just won
 		if(check_level_win()) :
-			load_next_level()
+			get_tree().change_scene_to_file("res://hub_world.tscn")
 
 #Attempt to move whatever is at from_coords to to_coords
 #Returns true if the move was successful, false if it was prevented
@@ -129,7 +116,7 @@ func check_level_win() :
 #Check if there is a tile over every button
 func all_buttons_pushed() : 
 	# Check if any block above the button is empty
-	for position in buttonLocations :
+	for currentPosition in buttonLocations :
 		if get_cell_atlas_coords(position) == EMPTY:
 			return false
 	return true
@@ -145,7 +132,3 @@ func update_goal() :
 
 func find_player_location() :
 	return get_used_cells_by_id(0,PLAYER_TILE)[0]
-
-#change scene to the next numerically-labeled level
-func load_next_level() :
-	get_tree().change_scene_to_file(get_next_level_path())
