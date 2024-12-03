@@ -18,8 +18,10 @@ var playerLocation : Vector2i
 var backgroundGrid : TileMapLayer 
 
 # I will assume nothing in the background grid moves.
+# This is actually the path grid, the background grid in hub_world is 
+# purely decorative.
 func get_background_grid():
-	return get_node("../BackgroundGrid")
+	return get_node("../PathGrid")
 
 
 func find_player_location() :

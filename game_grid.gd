@@ -60,7 +60,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 		# Update tiles that have been affected by certain game conditions
 		update_goal()
-		
+		if check_level_win() :
+			get_tree().change_scene_to_file("res://hub_world.tscn")
+
 
 #Attempt to move whatever is at from_coords to to_coords
 #Returns true if the move was successful, false if it was prevented
@@ -89,6 +91,7 @@ func attempt_move(from_coords, to_coords):
 # I will assume nothing in the background grid moves.
 func get_background_grid():
 	return get_node("../BackgroundGrid")
+	
 
 func find_goal(): 
 	#Search for goals that are active
