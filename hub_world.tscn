@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ona5t2edrogr"]
+[gd_scene load_steps=8 format=3 uid="uid://ona5t2edrogr"]
 
 [ext_resource type="Texture2D" uid="uid://cfeix67cm67ys" path="res://texture_atlas.png" id="1_hgwsa"]
 [ext_resource type="Script" path="res://game_grid.gd" id="2_bds3x"]
+[ext_resource type="Texture2D" uid="uid://brlvr66hfmeur" path="res://level_select_atlas.png" id="2_ydmmp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4rn3"]
 texture = ExtResource("1_hgwsa")
@@ -19,21 +20,13 @@ texture_region_size = Vector2i(625, 625)
 tile_size = Vector2i(625, 625)
 sources/0 = SubResource("TileSetAtlasSource_f4rn3")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ikcl"]
-texture = ExtResource("1_hgwsa")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p442c"]
+texture = ExtResource("2_ydmmp")
 texture_region_size = Vector2i(625, 625)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tvx3h"]
 tile_size = Vector2i(625, 625)
-sources/1 = SubResource("TileSetAtlasSource_0ikcl")
+sources/0 = SubResource("TileSetAtlasSource_p442c")
 
 [node name="PuzzleBase" type="Node2D"]
 
