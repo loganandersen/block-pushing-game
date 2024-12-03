@@ -55,7 +55,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				playerLocation = playerLocation + Vector2i(1,0)
 		
 		if event.is_action_pressed("restart"):
-			# GEt the top scene and reload
+			# Get the top scene and reload
 			get_tree().reload_current_scene()
 			
 		# Update tiles that have been affected by certain game conditions
