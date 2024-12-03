@@ -41,4 +41,7 @@ move_down={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+<<<<<<< HEAD
 renderer/rendering_method.mobile="gl_compatibility"
+=======
+>>>>>>> ef666da21437789d0b09e61010687874438001b0
