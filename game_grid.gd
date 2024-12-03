@@ -10,49 +10,12 @@ const GOAL = Vector2(3,0)
 const GOAL_CLOSED = Vector2(2,1)
 const EMPTY = Vector2i(-1,-1)
 
-#This is defined here because 
-# I am mainly worried about scope, when using the _ready function
+# Various variables used in the code, all are initialized by _ready()
 var playerLocation : Vector2i
 var buttonLocations : Array[Vector2i]
 var goalLocation : Vector2i 
 var backgroundGrid : TileMapLayer 
 
-# I will assume nothing in the background grid moves.
-func get_background_grid():
-	return get_node("../BackgroundGrid")
-
-func find_goal(): 
-	#Search for goals that are active
-	var goals = backgroundGrid.get_used_cells_by_id(0,GOAL)
-	# If there are no active goals search for an inactive one
-	if goals.is_empty():
-		goals = backgroundGrid.get_used_cells_by_id(0,GOAL_CLOSED)
-	# Get the goal, this will crash if the level has no goal.  
-	return goals[0]
-		
-
-#Check if there is a tile over every button
-func all_buttons_pushed() : 
-	# Check if any block above the button is empty
-	for position in buttonLocations :
-		print(position)
-		if get_cell_atlas_coords(position) == EMPTY:
-			
-			return false
-	return true
-		
-
-# Make the goal green if all buttons are pushed, make it black if no buttons
-# pushed.
-func update_goal() : 
-	if all_buttons_pushed() : 
-		backgroundGrid.set_cell(goalLocation, 0, GOAL)
-	else :
-		backgroundGrid.set_cell(goalLocation, 0, GOAL_CLOSED)
-
-func find_player_location() :
-	return get_used_cells_by_id(0,PLAYER_TILE)[0]
-	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	playerLocation = find_player_location()
@@ -118,3 +81,39 @@ func attempt_move(from_coords, to_coords):
 	
 	#Indicate the move was successful
 	return true
+
+# I will assume nothing in the background grid moves.
+func get_background_grid():
+	return get_node("../BackgroundGrid")
+
+func find_goal(): 
+	#Search for goals that are active
+	var goals = backgroundGrid.get_used_cells_by_id(0,GOAL)
+	# If there are no active goals search for an inactive one
+	if goals.is_empty():
+		goals = backgroundGrid.get_used_cells_by_id(0,GOAL_CLOSED)
+	# Get the goal, this will crash if the level has no goal.  
+	return goals[0]
+		
+
+#Check if there is a tile over every button
+func all_buttons_pushed() : 
+	# Check if any block above the button is empty
+	for position in buttonLocations :
+		print(position)
+		if get_cell_atlas_coords(position) == EMPTY:
+			return false
+	return true
+		
+
+# Make the goal green if all buttons are pushed, make it black if no buttons
+# pushed.
+func update_goal() : 
+	if all_buttons_pushed() : 
+		backgroundGrid.set_cell(goalLocation, 0, GOAL)
+	else :
+		backgroundGrid.set_cell(goalLocation, 0, GOAL_CLOSED)
+
+func find_player_location() :
+	return get_used_cells_by_id(0,PLAYER_TILE)[0]
+	
