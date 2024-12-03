@@ -6,15 +6,34 @@ const PLAYER_TILE = Vector2i(1,0)
 const WALL_TILE = Vector2i(3,1)
 const BOX_TILE = Vector2i(0,1)
 const BUTTON = Vector2i(2,0)
-const GOAL = Vector2(3,0)
-const GOAL_CLOSED = Vector2(2,1)
+const GOAL = Vector2i(3,0)
+const GOAL_CLOSED = Vector2i(2,1)
 const EMPTY = Vector2i(-1,-1)
+
+# Defines the path of levels that should be loaded
+# The level number will be inserted between these strings
+const LEVEL_PREFIX = "res://levels/puzzle_"
+const LEVEL_SUFFIX = "_fin.tscn"
+
+# The number of the last level in the game, that the player wins when completing
+const LAST_LEVEL_NUM = 6
+
+# Tracks the number of the level that should be loaded next
+static var nextLevelNumber = 0
 
 # Various variables used in the code, all are initialized by _ready()
 var playerLocation : Vector2i
 var buttonLocations : Array[Vector2i]
 var goalLocation : Vector2i 
 var backgroundGrid : TileMapLayer 
+
+# Return the full path for the next level in the loading sequence
+static func get_next_level_path() :
+	if(nextLevelNumber >= LAST_LEVEL_NUM) :
+		return #TODO: return the path for the victory screen here
+	else :
+		nextLevelNumber = nextLevelNumber + 1
+		return LEVEL_PREFIX + str(nextLevelNumber) + LEVEL_SUFFIX
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -60,9 +79,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 		# Update tiles that have been affected by certain game conditions
 		update_goal()
-		if check_level_win() :
-			get_tree().change_scene_to_file("res://hub_world.tscn")
-
+		# Load the next level if the player just won this one
+		if(check_level_win()) :
+			load_next_level()
 
 #Attempt to move whatever is at from_coords to to_coords
 #Returns true if the move was successful, false if it was prevented
@@ -105,7 +124,7 @@ func find_goal():
 
 # Checks if the player is on top of the goal, and if the goal is active.
 func check_level_win() :
-	return all_buttons_pushed() and playerLocation == goalLocation
+	return backgroundGrid.get_cell_atlas_coords(playerLocation) == GOAL
 
 #Check if there is a tile over every button
 func all_buttons_pushed() : 
@@ -126,4 +145,7 @@ func update_goal() :
 
 func find_player_location() :
 	return get_used_cells_by_id(0,PLAYER_TILE)[0]
-	
+
+#change scene to the next numerically-labeled level
+func load_next_level() :
+	get_tree().change_scene_to_file(get_next_level_path())
