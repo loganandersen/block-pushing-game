@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://ona5t2edrogr"]
+
+[ext_resource type="Texture2D" uid="uid://cfeix67cm67ys" path="res://texture_atlas.png" id="1_hgwsa"]
+[ext_resource type="Script" path="res://game_grid.gd" id="2_bds3x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4rn3"]
+texture = ExtResource("1_hgwsa")
+texture_region_size = Vector2i(625, 625)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_psmma"]
+tile_size = Vector2i(625, 625)
+sources/0 = SubResource("TileSetAtlasSource_f4rn3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ikcl"]
+texture = ExtResource("1_hgwsa")
+texture_region_size = Vector2i(625, 625)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tvx3h"]
+tile_size = Vector2i(625, 625)
+sources/1 = SubResource("TileSetAtlasSource_0ikcl")
+
+[node name="PuzzleBase" type="Node2D"]
+
+[node name="BackgroundGrid" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 3, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_psmma")
+y_sort_origin = -10
+
+[node name="GameGrid" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_tvx3h")
+y_sort_origin = 10
+script = ExtResource("2_bds3x")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)

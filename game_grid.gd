@@ -54,6 +54,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			if(move_success):
 				playerLocation = playerLocation + Vector2i(1,0)
 		
+		if event.is_action_pressed("restart"):
+			# GEt the top scene and reload
+			get_tree().reload_current_scene()
+			
 		# Update tiles that have been affected by certain game conditions
 		update_goal()
 		
@@ -96,11 +100,14 @@ func find_goal():
 	return goals[0]
 		
 
+# Checks if the player is on top of the goal, and if the goal is active.
+func check_level_win() :
+	return all_buttons_pushed() and playerLocation == goalLocation
+
 #Check if there is a tile over every button
 func all_buttons_pushed() : 
 	# Check if any block above the button is empty
 	for position in buttonLocations :
-		print(position)
 		if get_cell_atlas_coords(position) == EMPTY:
 			return false
 	return true
