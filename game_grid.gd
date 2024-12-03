@@ -8,6 +8,7 @@ const BOX_TILE = Vector2i(0,1)
 const BUTTON = Vector2i(2,0)
 const GOAL = Vector2(3,0)
 const GOAL_CLOSED = Vector2(2,1)
+const EMPTY = Vector2i(-1,-1)
 
 #This is defined here because 
 # I am mainly worried about scope, when using the _ready function
@@ -29,6 +30,23 @@ func find_goal():
 	# Get the goal, this will crash if the level has no goal.  
 	return goals[0]
 		
+
+#Check if there is a tile over every button
+func all_buttons_pushed() : 
+	# Check if any block above the button is empty
+	for position in buttonLocations :
+		if get_cell_atlas_coords(position) == EMPTY:
+			return false
+	return true
+		
+
+# Make the goal green if all buttons are pushed, make it black if no buttons
+# pushed.
+func update_goal() : 
+	if all_buttons_pushed() : 
+		set_cell(goalLocation, 0, GOAL)
+	else :
+		set_cell(goalLocation, 0, GOAL_CLOSED)
 
 func find_player_location() :
 	return get_used_cells_by_id(0,PLAYER_TILE)[0]
@@ -82,8 +100,11 @@ func attempt_move(from_coords, to_coords):
 			return false
 	
 	#Actually move
+	# Set the tile we are supposed to move to to the tile from the previous 
+	# position
 	set_cell(to_coords, 0, get_cell_atlas_coords(from_coords))
-	set_cell(from_coords, 0, Vector2i(20,4))
+	#Set the tile where the player was last to empty
+	set_cell(from_coords, 0, EMPTY)
 	
 	#Indicate the move was successful
 	return true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://coegl1xp1hnkb"]
+[gd_scene load_steps=7 format=4 uid="uid://c5kxvkj7marvx"]
 
 [ext_resource type="Texture2D" uid="uid://cfeix67cm67ys" path="res://texture_atlas.png" id="1_1ycse"]
 [ext_resource type="Script" path="res://game_grid.gd" id="2_83awc"]
