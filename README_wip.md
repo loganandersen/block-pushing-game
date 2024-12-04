@@ -3,20 +3,19 @@
 In here you can find the Assets and Code used in the game.
 
 Here's the way we reccomend for downloading the game.
-For this method, you will need to have git installed.
 
-    open git command prompt on your computer
-    Make sure to delete the leading and ending spaces, the spaces inside the code line(s) are needed
-    copy this line of code into the open terminal " git clone https://github.com/loganandersen/block-pushing-game.git "
-    copy this line of code into the open terminal " cd block-pushing-game "
-    copy this last line of code into the open terminal " godot project.godot "
-    open the godot executable file and run ' project '
+    Find the releases tab in the github
+    Download the .exe and the .pck files
+    Open the .exe in the same folder and the game should open
+
+    If you want to edit the code, download the source code file
+    open Godot's 4.3 executable and then open the project.godot file
 
 You can find all the assets for the game in the asset folder, if you wish to change them, feel free. Just make sure to match the file type that we ues (.png).
 
 #### Code
 
-The file 'game_grod.gd' is where the logic happens, a quick overview for it is as follows:
+The file 'game_grid.gd' is where the logic happens for the levels, a quick overview for it is as follows:
 Player moves,
 first, can the player move here?
 If yes, move there, if no, don't.
@@ -24,6 +23,11 @@ Next, forground and background
 Any asset the player can stand on goes into the background,
 any asset the player can NOT stand on goes in the foreground.
 
+Same applies for the 'level_grid.gd':
+Player moves,
+first, can the player move here?
+If yes, move there, if no, don't.
+The player can only move onto level spaces in the level select
 
 
 #### Credits
