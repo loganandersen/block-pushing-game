@@ -2,6 +2,9 @@
 
 In here you can find the Assets and Code used in the game.
 
+The controlls for the game are as follows:
+arrow keys to move, 'R' to restart a level, 'Enter' to enter a level while on the level select screen, 'Escape' will take you back to the level select from inside a level and back to the menu screen from the level select.
+
 Here's the way we reccomend for downloading the game.
 
     Find the releases tab in the github
