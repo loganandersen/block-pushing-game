@@ -49,4 +49,5 @@ y_sort_origin = 10
 script = ExtResource("2_tu6l0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.1, 0.1)
+position = Vector2(343, -599)
+zoom = Vector2(0.08, 0.08)
