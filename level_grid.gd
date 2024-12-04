@@ -64,6 +64,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 		if event.is_action_pressed("enter_level"):
 			enter_level()
+			
+		if event.is_action_pressed("escape"):
+			get_tree().change_scene_to_file("res://main_menu.tscn")
 		
 		# Update tiles that have been affected by certain game conditions
 		

@@ -62,7 +62,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("restart"):
 			# Get the top scene and reload
 			get_tree().reload_current_scene()
-			
+		
+		if event.is_action_pressed("escape"):
+			get_tree().change_scene_to_file("res://hub_world.tscn")
+		
 		# Update tiles that have been affected by certain game conditions
 		update_goal()
 		
